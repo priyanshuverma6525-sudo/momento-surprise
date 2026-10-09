@@ -2,152 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fff7fb">
-<title>Momento — Make a Moment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f5">
+<title>Momento — Make a Little Surprise</title>
 <style>
-:root{--ink:#292338;--muted:#756d80;--pink:#f45c91;--pink2:#ff8db4;--lav:#a18aff;--line:#f0e5ef;--paper:#fff;--bg:#fff8fc;--mint:#dff8ed}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.app{min-height:100vh;background:linear-gradient(180deg,#fff8fc 0%,#fff 55%,#faf8ff 100%)}.wrap{width:min(1120px,92%);margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f4e9f0}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:23px;letter-spacing:-.8px}.brand-icon{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;color:white;background:linear-gradient(135deg,var(--pink),var(--lav));box-shadow:0 7px 18px #f45c9133}.nav-right{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}.pill{border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:#fff}.hero{padding:66px 0 42px;text-align:center;position:relative;overflow:hidden}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #f4dfeb;border-radius:99px;padding:8px 13px;color:#a84370;font-size:12px;font-weight:750;letter-spacing:.4px}.hero h1{font-size:clamp(38px,6.2vw,68px);line-height:1.02;letter-spacing:-3px;max-width:800px;margin:22px auto 18px}.gradient{background:linear-gradient(90deg,#ed4e8a,#a077f6);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:620px;margin:0 auto;color:var(--muted);font-size:17px;line-height:1.7}.hero-actions{display:flex;justify-content:center;gap:12px;margin-top:26px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:13px 19px;font-weight:750;transition:transform .18s,box-shadow .18s}.btn:hover{transform:translateY(-2px)}.primary{color:white;background:linear-gradient(120deg,#f45c91,#a17af7);box-shadow:0 10px 24px #ec6da633}.secondary{background:white;border:1px solid var(--line);color:var(--ink)}.hero-deco{position:absolute;font-size:26px;opacity:.75;animation:float 4s ease-in-out infinite;pointer-events:none}.d1{left:8%;top:25%}.d2{right:10%;top:18%;animation-delay:1s}.d3{right:17%;bottom:9%;animation-delay:2s}.d4{left:15%;bottom:13%;animation-delay:.5s}@keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-12px) rotate(8deg)}}.section{padding:28px 0 72px}.section-heading{text-align:center;margin-bottom:25px}.section-heading h2{font-size:clamp(25px,4vw,36px);letter-spacing:-1.2px;margin:0 0 8px}.section-heading p{color:var(--muted);margin:0}.layout{display:grid;grid-template-columns:1.03fr .97fr;gap:22px;align-items:start}.panel{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 15px 45px #50304b08}.panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.panel-title h3{font-size:19px;margin:0;letter-spacing:-.4px}.step{font-size:11px;color:#a04a76;background:#fff0f6;padding:7px 10px;border-radius:99px;font-weight:800}.field{margin:0 0 17px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:8px;color:#51475e}.field input,.field textarea,.field select{width:100%;border:1px solid #e9dfe9;background:#fff;border-radius:12px;padding:12px 13px;color:var(--ink);outline:none;transition:border .2s,box-shadow .2s}.field input:focus,.field textarea:focus,.field select:focus{border-color:#e98bb2;box-shadow:0 0 0 3px #f45c9117}.field textarea{min-height:92px;resize:vertical;line-height:1.5}.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.type-option{border:1px solid #eee3ed;border-radius:14px;padding:13px 7px;text-align:center;background:#fff;color:var(--ink);font-weight:750;font-size:12px}.type-option span{display:block;font-size:24px;margin-bottom:7px}.type-option.active{border-color:#f27da8;background:#fff3f8;box-shadow:inset 0 0 0 1px #f27da8}.upload-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.filebox{border:1px dashed #e5cddd;border-radius:12px;padding:12px;background:#fffafd}.filebox label{margin:0 0 8px}.filebox input{border:0;padding:0;font-size:11px;background:transparent}.hint{font-size:11px;color:#918697;line-height:1.5;margin-top:7px}.wide{width:100%;margin-top:5px}.preview-panel{position:sticky;top:14px}.preview-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.live{display:flex;align-items:center;gap:6px;color:#279b70;font-size:11px;font-weight:800}.dot{width:7px;height:7px;background:#36c28d;border-radius:50%;box-shadow:0 0 0 4px #36c28d1c}.preview-shell{border:1px solid #eadde9;border-radius:22px;padding:10px;background:#f8f2f8}.preview-card{min-height:450px;border-radius:16px;overflow:hidden;background:linear-gradient(155deg,#fff0f6,#f5efff 60%,#fff);display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 22px;position:relative}.preview-card:before,.preview-card:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:#ffc2d755;filter:blur(2px)}.preview-card:before{top:-85px;left:-65px}.preview-card:after{bottom:-100px;right:-55px;background:#c9b8ff55}.preview-content{position:relative;z-index:1;width:100%}.preview-photo{width:100px;height:100px;border-radius:50%;border:5px solid #fff;object-fit:cover;box-shadow:0 8px 24px #ab6c9c22;margin:5px auto 18px;display:grid;place-items:center;background:linear-gradient(135deg,#ffc9df,#d5c8ff);font-size:36px}.preview-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#a45d88;font-weight:900}.preview-card h3{font-size:32px;line-height:1.1;letter-spacing:-1.1px;margin:13px 0}.preview-message{white-space:pre-wrap;max-width:360px;margin:0 auto;color:#6f6079;line-height:1.7;font-size:13px}.preview-names{margin:18px 0 22px;color:#b04e7b;font-weight:800}.preview-actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}.preview-actions button{border:0;border-radius:999px;padding:10px 16px;background:#ef5e96;color:white;font-size:11px;font-weight:800;box-shadow:0 7px 18px #ef5e9628}.preview-actions button.alt{background:#fff;color:#a75c88;border:1px solid #f1d4e4;box-shadow:none}.preview-foot{font-size:10px;color:#9c8ca3;margin-top:24px}.features{padding:12px 0 74px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{padding:22px;border:1px solid var(--line);border-radius:20px;background:white}.feature-icon{width:43px;height:43px;display:grid;place-items:center;background:#fff0f6;border-radius:14px;font-size:22px;margin-bottom:14px}.feature h3{font-size:15px;margin:0 0 7px}.feature p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}.footer{border-top:1px solid var(--line);padding:24px 0;color:#93889a;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#2e2539;color:white;padding:12px 17px;border-radius:12px;font-size:13px;box-shadow:0 10px 30px #2e253933;transition:.25s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}.tiny-note{font-size:11px;color:#8a7d90;line-height:1.55;margin-top:12px}.sparkle{display:inline-block;animation:twinkle 1.7s infinite}@keyframes twinkle{50%{transform:scale(1.2) rotate(12deg)}}@media(max-width:780px){.hero{padding:48px 0 35px}.hero h1{letter-spacing:-1.8px}.hero p{font-size:15px}.layout{grid-template-columns:1fr}.preview-panel{position:static}.panel{padding:18px}.feature-grid{grid-template-columns:1fr}.nav-right .pill{display:none}.preview-card{min-height:410px}.d1{left:3%}.d2{right:4%}}@media(min-width:781px){.creator-panel{padding:27px}}
+:root{--ink:#30232b;--muted:#786874;--line:#f0dce7;--pink:#e84d8a;--purple:#a45ce2}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,#ffe3ef,transparent 38%),linear-gradient(135deg,#fff8fb,#f5f0ff);color:var(--ink);min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:13px;padding:12px 16px;font-weight:700}.wrap{max-width:1080px;margin:auto;padding:18px}.nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0 20px}.logo{font-size:1.45rem;font-weight:900}.logo span{color:var(--pink)}.pill{font-size:.8rem;background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:99px;color:var(--muted)}.hero{text-align:center;padding:22px 10px 30px}.eyebrow{color:var(--pink);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:.75rem}.hero h1{font-size:clamp(2rem,7vw,4rem);line-height:1.06;letter-spacing:-1.5px;margin:12px 0}.hero p{color:var(--muted);max-width:600px;margin:auto;line-height:1.6}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}.panel{background:#ffffffdf;border:1px solid var(--line);border-radius:22px;padding:21px;box-shadow:0 14px 40px #5b244010}.panel h2{margin:0 0 7px;font-size:1.2rem}.sub{color:var(--muted);font-size:.9rem;margin:0 0 18px;line-height:1.5}.field{margin:14px 0}.field label{display:block;font-size:.88rem;font-weight:750;margin:0 0 7px}.field input,.field textarea,.field select{width:100%;border:1px solid #ead8e3;background:#fff;border-radius:11px;padding:12px;color:var(--ink);outline:none}.field textarea{min-height:100px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.primary{background:linear-gradient(100deg,var(--pink),var(--purple));color:white}.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:.8rem;color:var(--muted);line-height:1.5}.status{display:none;margin-top:14px;padding:12px;border-radius:12px;background:#fff0f6;color:#7a2851;overflow-wrap:anywhere;font-size:.9rem}.status.show{display:block}.preview{position:sticky;top:14px}.preview-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.live{font-size:.75rem;color:#27916a;font-weight:800}.card-preview{min-height:360px;border-radius:20px;padding:25px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#ffe0ec,#f6e7ff);overflow:hidden}.emoji{font-size:3rem}.card-preview h2{font-size:clamp(1.6rem,5vw,2.4rem);margin:15px 0 10px;overflow-wrap:anywhere}.card-preview p{line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.names{color:#7a5274;font-weight:700}.photo-preview{max-width:100%;max-height:180px;object-fit:cover;border-radius:14px;margin-top:10px;display:none}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 10px}.feature{background:#ffffffa8;border:1px solid var(--line);border-radius:16px;padding:15px;text-align:center}.feature strong{display:block;margin:5px}.feature small{color:var(--muted);line-height:1.4}.footer{text-align:center;color:var(--muted);font-size:.82rem;padding:25px 0 12px}.hide{display:none!important}.sharebox{background:#f7f1ff;border:1px dashed #c7a4e9;padding:12px;border-radius:12px;overflow-wrap:anywhere;margin-top:12px}.sharebox a{color:#7a39ba;font-weight:700}.view-mode .editor{display:none}.view-mode .grid{grid-template-columns:1fr;max-width:720px;margin:auto}.view-mode .preview{position:static}.view-mode .card-preview{min-height:440px}@media(max-width:760px){.wrap{padding:13px}.grid{grid-template-columns:1fr}.preview{position:static}.features{grid-template-columns:1fr}.panel{padding:17px}.row{grid-template-columns:1fr}.hero{padding-top:8px}}
 </style>
 </head>
 <body>
-<div class="app">
-  <div class="wrap">
-    <header class="nav">
-      <div class="brand"><span class="brand-icon">♡</span><span>momento<span class="gradient">.</span></span></div>
-      <div class="nav-right"><span>Little things. Big feelings.</span><span class="pill">Made with ♥</span></div>
-    </header>
-    <section class="hero">
-      <span class="hero-deco d1">💌</span><span class="hero-deco d2">✨</span><span class="hero-deco d3">💗</span><span class="hero-deco d4">🌷</span>
-      <div class="eyebrow"><span class="sparkle">✦</span> YOUR FEELINGS, BEAUTIFULLY WRAPPED</div>
-      <h1>Make a moment<br>they'll <span class="gradient">never forget.</span></h1>
-      <p>Create a personal little website for someone special. Add your words, photos and music, then export your surprise page to share.</p>
-      <div class="hero-actions"><button class="btn primary" onclick="document.getElementById('creator').scrollIntoView({behavior:'smooth'})">Create your surprise <span>→</span></button><button class="btn secondary" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">Explore features</button></div>
-    </section>
-    <section class="section" id="creator">
-      <div class="section-heading"><h2>Let's make it <span class="gradient">personal.</span></h2><p>Choose a vibe, write from the heart, and watch your page come alive.</p></div>
-      <div class="layout">
-        <section class="panel creator-panel">
-          <div class="panel-title"><h3>Build your surprise</h3><span class="step">STEP 01 / CREATE</span></div>
-          <div class="field"><label>1. Pick your occasion</label>
-            <div class="type-grid">
-              <button class="type-option active" data-type="love" onclick="setType('love',this)"><span>💖</span>Love</button>
-              <button class="type-option" data-type="birthday" onclick="setType('birthday',this)"><span>🎂</span>Birthday</button>
-              <button class="type-option" data-type="sorry" onclick="setType('sorry',this)"><span>🥺</span>Sorry</button>
-            </div>
-          </div>
-          <div class="field"><label for="fromName">2. Your name</label><input id="fromName" placeholder="e.g. Priyanshu" value="Someone special" maxlength="60" oninput="updatePreview()"></div>
-          <div class="field"><label for="toName">3. Their name</label><input id="toName" placeholder="Who is this for?" value="My favourite person" maxlength="60" oninput="updatePreview()"></div>
-          <div class="field"><label for="headline">4. Main heading</label><input id="headline" value="A little something for you..." maxlength="90" oninput="updatePreview()"></div>
-          <div class="field"><label for="message">5. Your message</label><textarea id="message" maxlength="1200" oninput="updatePreview()">Some people make ordinary days feel special just by being in them. This little page is a reminder that you matter to me more than words can say. Keep smiling, because the world feels a little brighter when you do. ♡</textarea><div class="hint">Write it your way. Emojis and line breaks are welcome.</div></div>
-          <div class="upload-row">
-            <div class="field filebox"><label for="photo">6. Add a photo</label><input id="photo" type="file" accept="image/*" onchange="loadPhoto(event)"><div class="hint">Optional · JPG or PNG</div></div>
-            <div class="field filebox"><label for="music">7. Add music</label><input id="music" type="file" accept="audio/*" onchange="loadMusic(event)"><div class="hint">Optional · audio file</div></div>
-          </div>
-          <div class="field"><label for="theme">8. Choose a colour mood</label><select id="theme" onchange="updateTheme()"><option value="pink">Blush & lavender</option><option value="rose">Rose garden</option><option value="night">Midnight magic</option><option value="sunshine">Soft sunshine</option><option value="mint">Mint dream</option></select></div>
-          <button class="btn primary wide" onclick="downloadSurprise()">♡ Export my surprise page</button>
-          <p class="tiny-note">Your photos and music stay in your browser while you create. Export creates a standalone HTML file. To give someone a public URL, upload that file to a hosting service such as GitHub Pages.</p>
-        </section>
-        <section class="panel preview-panel">
-          <div class="preview-top"><h3 style="margin:0;font-size:16px">Live preview</h3><span class="live"><span class="dot"></span> UPDATING LIVE</span></div>
-          <div class="preview-shell"><div class="preview-card" id="previewCard">
-            <div class="preview-content">
-              <div class="preview-photo" id="previewPhoto">💗</div>
-              <div class="preview-tag" id="previewTag">A MOMENT MADE FOR YOU</div>
-              <h3 id="previewHeadline">A little something for you...</h3>
-              <p class="preview-message" id="previewMessage">Some people make ordinary days feel special just by being in them.</p>
-              <div class="preview-names" id="previewNames">Someone special → My favourite person</div>
-              <div class="preview-actions"><button onclick="previewAction()">Open my heart ♡</button><button class="alt" onclick="showToast('A little smile, just for you ✨')">Send a smile ✨</button></div>
-              <div class="preview-foot">made with love · just for you</div>
-            </div>
-          </div></div>
-          <p class="tiny-note">This preview updates as you type. Export your page to try the full-screen surprise with its own animations and optional music.</p>
-        </section>
-      </div>
-    </section>
-    <section class="features" id="features">
-      <div class="section-heading"><h2>Small details. <span class="gradient">Big feelings.</span></h2><p>Everything you need to make a page feel like it belongs to them.</p></div>
-      <div class="feature-grid">
-        <article class="feature"><div class="feature-icon">✍️</div><h3>Your words, your way</h3><p>Write a personal note, change the title, and make every line sound like you.</p></article>
-        <article class="feature"><div class="feature-icon">📸</div><h3>Memories in a moment</h3><p>Add a photo to make your surprise more personal. Your selected image is embedded in the exported page.</p></article>
-        <article class="feature"><div class="feature-icon">🎵</div><h3>Set the mood</h3><p>Add an audio file to your exported page. The recipient can start playback with a tap.</p></article>
-      </div>
-    </section>
-    <footer class="footer"><div class="footer-inner"><span>© 2026 momento. Made for meaningful moments.</span><span>Made with <span style="color:#ef5d94">♥</span> and a little bit of magic.</span></div></footer>
-  </div>
+<div class="wrap">
+<header class="nav"><div class="logo">momento<span>.</span></div><div class="pill">Little moments, big feelings 💗</div></header>
+<section class="hero" id="hero"><div class="eyebrow">Make something heartfelt</div><h1>A little surprise can mean<br>the whole world.</h1><p>Create a personalised surprise for someone special. Add your message, choose a mood, then share your surprise link.</p></section>
+<main class="grid">
+<section class="panel editor" id="editor">
+<h2>Create your surprise ✨</h2><p class="sub">Fill in the details below. Your preview updates as you type.</p>
+<div class="field"><label for="type">Choose a surprise</label><select id="type"><option value="love">💖 Love / Just because</option><option value="birthday">🎂 Birthday</option><option value="sorry">🥺 Say sorry</option><option value="friendship">🫶 Friendship</option><option value="thankyou">🌷 Thank you</option></select></div>
+<div class="row"><div class="field"><label for="from">Your name</label><input id="from" maxlength="60" placeholder="Your name"></div><div class="field"><label for="to">Their name</label><input id="to" maxlength="60" placeholder="Someone special"></div></div>
+<div class="field"><label for="heading">Main heading</label><input id="heading" maxlength="100" placeholder="You make life brighter"></div>
+<div class="field"><label for="message">Your message</label><textarea id="message" maxlength="2500" placeholder="Write something from your heart..."></textarea></div>
+<div class="field"><label for="theme">Choose a theme</label><select id="theme"><option value="pink">Rose pink 🌸</option><option value="purple">Dreamy purple 💜</option><option value="sunset">Warm sunset 🌅</option><option value="mint">Fresh mint 🍃</option><option value="night">Midnight ✨</option></select></div>
+<div class="field"><label for="photo">Add a photo (optional)</label><input id="photo" type="file" accept="image/*"><div class="hint">Choose a small photo (up to 1 MB). Public photo storage needs an additional secure storage setup.</div></div>
+<div class="field"><label for="music">Add music (optional)</label><input id="music" type="file" accept="audio/*"><div class="hint">Browsers usually require the recipient to tap Play before music starts.</div></div>
+<div class="actions"><button class="primary" id="createBtn">Create shareable surprise 💌</button><button class="secondary" id="resetBtn" type="button">Reset</button></div>
+<div class="status" id="status" role="status"></div><p class="hint">To create public links, add your Firebase web config below in the code and configure secure Firestore rules. Until then, preview mode works.</p>
+</section>
+<section class="panel preview"><div class="preview-head"><h2>Live preview</h2><span class="live">● LIVE</span></div><div class="card-preview" id="previewCard"><div class="emoji" id="pEmoji">💖</div><div class="names" id="pNames">A little note for someone special</div><h2 id="pHeading">You make life brighter</h2><p id="pMessage">Some people make ordinary days feel magical. This little surprise is just to remind you that you matter. 💗</p><img class="photo-preview" id="pPhoto" alt="Selected photo"><audio id="pAudio" controls class="hide" style="width:100%;margin-top:12px"></audio></div><div id="shareResult"></div></section>
+</main>
+<section class="features"><div class="feature">💌<strong>Personalised</strong><small>Your words, names and colours.</small></div><div class="feature">🎨<strong>Your style</strong><small>Choose a theme that feels right.</small></div><div class="feature">🔗<strong>Shareable</strong><small>Unique public links after Firebase setup.</small></div></section>
+<footer class="footer">Made with care by momento. · Starter project — secure Firebase setup required before public sharing.</footer>
 </div>
-<div class="toast" id="toast"></div>
-<script>
-let currentType='love', photoData='', musicData='', musicName='';
-const typeConfig={
- love:{tag:'A MOMENT MADE FOR YOU',icon:'💗',heading:'A little something for you...',message:'Some people make ordinary days feel special just by being in them. This little page is a reminder that you matter to me more than words can say. Keep smiling, because the world feels a little brighter when you do. ♡'},
- birthday:{tag:'TODAY IS ALL ABOUT YOU',icon:'🎂',heading:'Happy Birthday, sunshine!',message:'Today is a little reminder of how special you are. I hope your day is filled with laughter, warm hugs, lovely surprises, and all the happiness you deserve. Keep shining and keep being wonderfully you. 🎂✨'},
- sorry:{tag:'A NOTE FROM MY HEART',icon:'🥺',heading:'Can we make things right?',message:'I am sorry if I hurt you. You matter to me, and I never want a small mistake to stand between us. I may not always find the perfect words, but I truly want to listen, understand, and make things better. ♡'}
+<script type="module">
+/* FIREBASE SETUP: Replace placeholders with the Web app config from Firebase Console.
+   Create Firestore and set secure rules before enabling public user-generated content. */
+const firebaseConfig = {
+ apiKey:"PASTE_YOUR_API_KEY_HERE",
+ authDomain:"PASTE_YOUR_PROJECT_ID_HERE.firebaseapp.com",
+ projectId:"PASTE_YOUR_PROJECT_ID_HERE",
+ storageBucket:"PASTE_YOUR_STORAGE_BUCKET_HERE",
+ messagingSenderId:"PASTE_YOUR_MESSAGING_SENDER_ID_HERE",
+ appId:"PASTE_YOUR_APP_ID_HERE"
 };
-const themes={
- pink:{bg:'linear-gradient(155deg,#fff0f6,#f5efff 60%,#fff)',accent:'#ef5e96',glow:'#ffc2d755',text:'#6f6079'},
- rose:{bg:'linear-gradient(155deg,#fff0f0,#ffe3e9 60%,#fff8f4)',accent:'#d94e73',glow:'#ffb6c855',text:'#79545f'},
- night:{bg:'linear-gradient(155deg,#211c3d,#3b2d60 60%,#25223f)',accent:'#c6a8ff',glow:'#9e8bff30',text:'#e5dff5'},
- sunshine:{bg:'linear-gradient(155deg,#fff8de,#fff0df 60%,#fff)',accent:'#dc8c37',glow:'#ffdc8a66',text:'#806847'},
- mint:{bg:'linear-gradient(155deg,#e9fff7,#eaf7ff 60%,#fff)',accent:'#269b82',glow:'#8be6cf55',text:'#52756f'}
+const $=id=>document.getElementById(id);
+const presets={
+ love:{emoji:"💖",heading:"You make life brighter",message:"Some people make ordinary days feel magical. This little surprise is just to remind you that you matter. 💗"},
+ birthday:{emoji:"🎂",heading:"Happy Birthday!",message:"Wishing you a day full of smiles, lovely memories and all the little things that make you happy. You deserve so much joy! 🎉"},
+ sorry:{emoji:"🥺",heading:"Can we make things right?",message:"I’m sorry. You matter to me, and I hope we can talk, understand each other and make things better. 💗"},
+ friendship:{emoji:"🫶",heading:"Lucky to have you",message:"Thank you for being part of my story. The laughs, memories and little moments with you mean a lot. Here’s to more! 💛"},
+ thankyou:{emoji:"🌷",heading:"A little thank you",message:"Thank you for your kindness and for making a difference in ways you may not even realise. I appreciate you. 🌷"}
 };
-function setType(type,button){
- currentType=type;document.querySelectorAll('.type-option').forEach(b=>b.classList.toggle('active',b===button));
- document.getElementById('headline').value=typeConfig[type].heading;
- document.getElementById('message').value=typeConfig[type].message;
- updatePreview();
-}
-function updatePreview(){
- const from=document.getElementById('fromName').value.trim()||'Someone special';
- const to=document.getElementById('toName').value.trim()||'My favourite person';
- document.getElementById('previewHeadline').textContent=document.getElementById('headline').value||'A little something for you...';
- document.getElementById('previewMessage').textContent=document.getElementById('message').value;
- document.getElementById('previewNames').textContent=from+'  →  '+to;
- document.getElementById('previewTag').textContent=typeConfig[currentType].tag;
- if(!photoData)document.getElementById('previewPhoto').textContent=typeConfig[currentType].icon;
-}
-function updateTheme(){
- const t=themes[document.getElementById('theme').value],card=document.getElementById('previewCard');
- card.style.background=t.bg;card.style.color=document.getElementById('theme').value==='night'?'#fff':'#292338';
- card.querySelector('h3').style.color=document.getElementById('theme').value==='night'?'#fff':'#292338';
- card.querySelector('.preview-tag').style.color=t.accent;
- card.querySelector('.preview-names').style.color=t.accent;
- card.querySelector('.preview-message').style.color=t.text;
- card.querySelectorAll('.preview-actions button').forEach((b,i)=>{if(i===0){b.style.background=t.accent;b.style.color=document.getElementById('theme').value==='night'?'#211c3d':'white'}});
-}
-function loadPhoto(event){
- const f=event.target.files[0];if(!f)return;
- if(f.size>5*1024*1024){showToast('Choose a photo under 5 MB, please.');event.target.value='';return}
- const r=new FileReader();r.onload=()=>{photoData=r.result;const p=document.getElementById('previewPhoto');p.style.backgroundImage=`url("${photoData}")`;p.style.backgroundSize='cover';p.style.backgroundPosition='center';p.textContent='';};r.readAsDataURL(f);
-}
-function loadMusic(event){
- const f=event.target.files[0];if(!f)return;
- if(f.size>8*1024*1024){showToast('Choose an audio file under 8 MB, please.');event.target.value='';return}
- const r=new FileReader();r.onload=()=>{musicData=r.result;musicName=f.name;showToast('Music added! It will play after the recipient taps play. 🎵')};r.readAsDataURL(f);
-}
-function previewAction(){showToast('A little love, just for you '+typeConfig[currentType].icon)}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function downloadSurprise(){
- const from=document.getElementById('fromName').value.trim()||'Someone special';
- const to=document.getElementById('toName').value.trim()||'My favourite person';
- const heading=document.getElementById('headline').value.trim()||'A little something for you...';
- const message=document.getElementById('message').value;
- const theme=themes[document.getElementById('theme').value];
- const dark=document.getElementById('theme').value==='night';
- const photo=photoData?`<img class="portrait" src="${photoData}" alt="A special memory">`:`<div class="portrait emoji">${typeConfig[currentType].icon}</div>`;
- const audio=musicData?`<audio id="song" src="${musicData}" loop></audio><button class="music" id="musicBtn" onclick="toggleMusic()">♫ Play our song</button>`:'';
- const title=currentType==='birthday'?'A birthday surprise':currentType==='sorry'?'A little apology':'A little surprise';
- const out=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff4f9"><title>${esc(heading)}</title><style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:${theme.bg};font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:${dark?'#fff':'#2d2337'};overflow-x:hidden}.card{position:relative;max-width:650px;width:100%;padding:clamp(28px,7vw,62px) clamp(22px,6vw,55px);border:1px solid ${dark?'#ffffff25':'#fff'};border-radius:30px;background:${dark?'#ffffff0b':'#ffffffb8'};backdrop-filter:blur(10px);box-shadow:0 25px 90px #53334b18;text-align:center;animation:arrive .8s ease both;overflow:hidden}.card:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:${theme.glow};filter:blur(3px);top:-130px;left:-90px}.card:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:${theme.glow};filter:blur(3px);bottom:-130px;right:-90px}.inside{position:relative;z-index:1}.tag{font-size:11px;letter-spacing:2.5px;font-weight:850;color:${theme.accent}}.portrait{width:116px;height:116px;object-fit:cover;border-radius:50%;border:5px solid white;box-shadow:0 9px 30px #8e547322;margin:0 auto 23px;display:block}.emoji{display:grid;place-items:center;background:linear-gradient(135deg,#ffc9df,#d5c8ff);font-size:44px}h1{font-size:clamp(32px,7vw,54px);letter-spacing:-1.8px;line-height:1.07;margin:16px 0 20px}p{white-space:pre-wrap;line-height:1.85;color:${theme.text};font-size:16px;margin:0 auto;max-width:500px}.names{margin-top:25px;color:${theme.accent};font-weight:800}.buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}button{border:0;border-radius:999px;padding:13px 19px;background:${theme.accent};color:${dark?'#241b3a':'white'};font-weight:800;font-size:13px;cursor:pointer;box-shadow:0 8px 20px #00000010}.music{margin-top:14px;background:transparent;color:${theme.accent};border:1px solid ${theme.accent};box-shadow:none}.foot{font-size:11px;opacity:.65;margin-top:26px}.heart{position:fixed;bottom:-40px;animation:rise 5s linear forwards;pointer-events:none}@keyframes arrive{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes rise{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}@media(max-width:480px){.card{border-radius:24px}.portrait{width:100px;height:100px}p{font-size:14px}}</style></head><body><main class="card"><div class="inside">${photo}<div class="tag">${esc(typeConfig[currentType].tag)}</div><h1>${esc(heading)}</h1><p>${esc(message)}</p><div class="names">${esc(from)} &nbsp;♡&nbsp; ${esc(to)}</div><div class="buttons"><button onclick="sprinkle()">Send a little love ♡</button><button onclick="document.getElementById('note').hidden=false">One more thing ✨</button></div><p id="note" hidden style="margin-top:20px;font-weight:700;color:${theme.accent}">No matter what, I hope this made you smile. 💗</p>${audio}<div class="foot">made with love · just for you</div></div></main><script>
-function sprinkle(){for(let i=0;i<18;i++){let e=document.createElement('span');e.className='heart';e.textContent=['♡','♥','✨','💗'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(16+Math.random()*22)+'px';e.style.animationDuration=(3+Math.random()*3)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),6200)}}
-function toggleMusic(){let a=document.getElementById('song'),b=document.getElementById('musicBtn');if(a.paused){a.play().then(()=>b.textContent='Ⅱ Pause our song').catch(()=>{});}else{a.pause();b.textContent='♫ Play our song'}}
-<\/script></body></html>`;
- const blob=new Blob([out],{type:'text/html;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
- a.href=url;a.download='my-'+currentType+'-surprise.html';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
- showToast('Your surprise page is ready to save! 💗');
-}
-updatePreview();updateTheme();
+const themes={pink:"linear-gradient(145deg,#ffe0ec,#f6e7ff)",purple:"linear-gradient(145deg,#e7ddff,#fce5f1)",sunset:"linear-gradient(145deg,#ffe2c7,#ffd8df)",mint:"linear-gradient(145deg,#d9f8e8,#e3f2ff)",night:"linear-gradient(145deg,#25284d,#614c7e)"};
+function data(){return {type:$("type").value,from:$("from").value.trim(),to:$("to").value.trim(),heading:$("heading").value.trim(),message:$("message").value.trim(),theme:$("theme").value}}
+function update(){let d=data(),p=presets[d.type];$("pEmoji").textContent=p.emoji;$("pNames").textContent=d.from&&d.to?`${d.from} made this for ${d.to} 💌`:d.to?`A little note for ${d.to}`:d.from?`A little surprise from ${d.from}`:"A little note for someone special";$("pHeading").textContent=d.heading||p.heading;$("pMessage").textContent=d.message||p.message;$("previewCard").style.background=themes[d.theme];$("previewCard").style.color=d.theme==="night"?"white":"#30232b";$("pNames").style.color=d.theme==="night"?"#f7c5e0":"#7a5274"}
+function status(t){$("status").textContent=t;$("status").classList.add("show")}
+["type","from","to","heading","message","theme"].forEach(id=>$(id).addEventListener("input",()=>{if(id==="type"){$("heading").value=presets[$("type").value].heading;$("message").value=presets[$("type").value].message}update()}));
+$("photo").addEventListener("change",()=>{let f=$("photo").files[0],i=$("pPhoto");if(!f){i.style.display="none";return}if(f.size>1024*1024){status("Please choose a photo smaller than 1 MB.");$("photo").value="";return}i.src=URL.createObjectURL(f);i.style.display="block"});
+$("music").addEventListener("change",()=>{let f=$("music").files[0],a=$("pAudio");if(!f){a.classList.add("hide");return}if(f.size>3*1024*1024){status("Please choose an audio file smaller than 3 MB.");$("music").value="";return}a.src=URL.createObjectURL(f);a.classList.remove("hide")});
+function ready(){return firebaseConfig.apiKey!=="PASTE_YOUR_API_KEY_HERE"&&firebaseConfig.projectId!=="PASTE_YOUR_PROJECT_ID_HERE"}
+async function firebase(){if(!ready())return null;const appmod=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");const dbmod=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");let app=appmod.initializeApp(firebaseConfig);return {db:dbmod.getFirestore(app),doc:dbmod.doc,getDoc:dbmod.getDoc,setDoc:dbmod.setDoc,serverTimestamp:dbmod.serverTimestamp}}
+function shared(d){document.body.classList.add("view-mode");$("hero").classList.add("hide");$("editor").classList.add("hide");document.querySelector(".features").classList.add("hide");$("pEmoji").textContent=(presets[d.type]||presets.love).emoji;$("pNames").textContent=d.from&&d.to?`${d.from} made this for ${d.to} 💌`:d.to?`A little note for ${d.to}`:"A little surprise for you";$("pHeading").textContent=d.heading||"A little surprise";$("pMessage").textContent=d.message||"";$("previewCard").style.background=themes[d.theme]||themes.pink;$("previewCard").style.color=d.theme==="night"?"white":"#30232b"}
+if(new URLSearchParams(location.search).has("id")){(async()=>{try{let f=await firebase();if(!f){status("Firebase config is not set up in this copy yet.");return}let snap=await f.getDoc(f.doc(f.db,"surprises",new URLSearchParams(location.search).get("id")));if(snap.exists())shared(snap.data());else status("This surprise link could not be found.")}catch(e){console.error(e);status("Could not load surprise. Check Firebase config and Firestore rules.")}})()}
+$("createBtn").addEventListener("click",async()=>{let d=data();d.heading=d.heading||presets[d.type].heading;d.message=d.message||presets[d.type].message;if(!ready()){status("Firebase abhi connect nahi hua. Code mein firebaseConfig ke placeholder values replace karni hongi. Preview abhi kaam karta hai.");return}try{let f=await firebase(),id=(crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2)+Date.now().toString(36)).replace(/-/g,"").slice(0,20);await f.setDoc(f.doc(f.db,"surprises",id),{...d,createdAt:f.serverTimestamp()});let url=location.origin+location.pathname+"?id="+encodeURIComponent(id);$("shareResult").innerHTML='<div class="sharebox"><strong>🎉 Your surprise link is ready!</strong><p><a id="shareLink" target="_blank" rel="noopener"></a></p><button class="secondary" id="copyLink">Copy link</button></div>';$("shareLink").href=url;$("shareLink").textContent=url;$("copyLink").onclick=async()=>{try{await navigator.clipboard.writeText(url);status("Link copied! Share it with your recipient.")}catch(e){status("Press and hold the link above to copy it.")}};status("Surprise saved! Share the generated link.")}catch(e){console.error(e);status("Surprise save nahi hua. Firestore database aur security rules check karo; public access ko bina security rules ke enable mat karo.")}});
+$("resetBtn").addEventListener("click",()=>{["from","to"].forEach(i=>$(i).value="");$("type").value="love";$("heading").value=presets.love.heading;$("message").value=presets.love.message;$("theme").value="pink";$("photo").value="";$("music").value="";$("pPhoto").style.display="none";$("pAudio").classList.add("hide");$("shareResult").innerHTML="";$("status").classList.remove("show");update()});
+$("heading").value=presets.love.heading;$("message").value=presets.love.message;update();
 </script>
-</body>
-</html>
+</body></html>
