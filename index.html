@@ -2,41 +2,274 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff0f5">
-<title>Momento — Make a Little Surprise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Momento 💖 Make a Little Surprise</title>
+
 <style>
-:root{--ink:#30232b;--muted:#786874;--line:#f0dce7;--pink:#e84d8a;--purple:#a45ce2}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,#ffe3ef,transparent 38%),linear-gradient(135deg,#fff8fb,#f5f0ff);color:var(--ink);min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:13px;padding:12px 16px;font-weight:700}.wrap{max-width:1080px;margin:auto;padding:18px}.nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0 20px}.logo{font-size:1.45rem;font-weight:900}.logo span{color:var(--pink)}.pill{font-size:.8rem;background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:99px;color:var(--muted)}.hero{text-align:center;padding:22px 10px 30px}.eyebrow{color:var(--pink);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:.75rem}.hero h1{font-size:clamp(2rem,7vw,4rem);line-height:1.06;letter-spacing:-1.5px;margin:12px 0}.hero p{color:var(--muted);max-width:600px;margin:auto;line-height:1.6}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}.panel{background:#ffffffdf;border:1px solid var(--line);border-radius:22px;padding:21px;box-shadow:0 14px 40px #5b244010}.panel h2{margin:0 0 7px;font-size:1.2rem}.sub{color:var(--muted);font-size:.9rem;margin:0 0 18px;line-height:1.5}.field{margin:14px 0}.field label{display:block;font-size:.88rem;font-weight:750;margin:0 0 7px}.field input,.field textarea,.field select{width:100%;border:1px solid #ead8e3;background:#fff;border-radius:11px;padding:12px;color:var(--ink);outline:none}.field textarea{min-height:100px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.primary{background:linear-gradient(100deg,var(--pink),var(--purple));color:white}.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:.8rem;color:var(--muted);line-height:1.5}.status{display:none;margin-top:14px;padding:12px;border-radius:12px;background:#fff0f6;color:#7a2851;overflow-wrap:anywhere;font-size:.9rem}.status.show{display:block}.preview{position:sticky;top:14px}.preview-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.live{font-size:.75rem;color:#27916a;font-weight:800}.card-preview{min-height:360px;border-radius:20px;padding:25px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#ffe0ec,#f6e7ff);overflow:hidden}.emoji{font-size:3rem}.card-preview h2{font-size:clamp(1.6rem,5vw,2.4rem);margin:15px 0 10px;overflow-wrap:anywhere}.card-preview p{line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.names{color:#7a5274;font-weight:700}.photo-preview{max-width:100%;max-height:180px;object-fit:cover;border-radius:14px;margin-top:10px;display:none}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 10px}.feature{background:#ffffffa8;border:1px solid var(--line);border-radius:16px;padding:15px;text-align:center}.feature strong{display:block;margin:5px}.feature small{color:var(--muted);line-height:1.4}.footer{text-align:center;color:var(--muted);font-size:.82rem;padding:25px 0 12px}.hide{display:none!important}.sharebox{background:#f7f1ff;border:1px dashed #c7a4e9;padding:12px;border-radius:12px;overflow-wrap:anywhere;margin-top:12px}.sharebox a{color:#7a39ba;font-weight:700}.view-mode .editor{display:none}.view-mode .grid{grid-template-columns:1fr;max-width:720px;margin:auto}.view-mode .preview{position:static}.view-mode .card-preview{min-height:440px}@media(max-width:760px){.wrap{padding:13px}.grid{grid-template-columns:1fr}.preview{position:static}.features{grid-template-columns:1fr}.panel{padding:17px}.row{grid-template-columns:1fr}.hero{padding-top:8px}}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 18px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe0ec, #e8e2ff, #dff8ff);
+  color: #403047;
+}
+
+.container {
+  max-width: 520px;
+  margin: 20px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px #00000015;
+}
+
+h1 {
+  text-align: center;
+  color: #d63384;
+}
+
+.subtitle {
+  text-align: center;
+  color: #796a80;
+  line-height: 1.6;
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #e4c8e0;
+  border-radius: 12px;
+  font-size: 16px;
+  background: #fffaff;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #e83e8c;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+}
+
+.preview {
+  display: none;
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+#status {
+  padding: 12px;
+  margin-top: 18px;
+  border-radius: 10px;
+  background: #f8efff;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+#shareBox {
+  display: none;
+  padding: 15px;
+  margin-top: 18px;
+  border-radius: 12px;
+  background: #e8fff0;
+}
+
+#shareLink {
+  display: block;
+  margin-top: 10px;
+  word-break: break-all;
+}
+
+#surpriseView {
+  display: none;
+  text-align: center;
+}
+
+#surpriseMessage {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+#surpriseMusic {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.small {
+  font-size: 13px;
+  color: #796a80;
+  line-height: 1.6;
+}
 </style>
 </head>
+
 <body>
-<div class="wrap">
-<header class="nav"><div class="logo">momento<span>.</span></div><div class="pill">Little moments, big feelings 💗</div></header>
-<section class="hero" id="hero"><div class="eyebrow">Make something heartfelt</div><h1>A little surprise can mean<br>the whole world.</h1><p>Create a personalised surprise for someone special. Add your message, choose a mood, then share your surprise link.</p></section>
-<main class="grid">
-<section class="panel editor" id="editor">
-<h2>Create your surprise ✨</h2><p class="sub">Fill in the details below. Your preview updates as you type.</p>
-<div class="field"><label for="type">Choose a surprise</label><select id="type"><option value="love">💖 Love / Just because</option><option value="birthday">🎂 Birthday</option><option value="sorry">🥺 Say sorry</option><option value="friendship">🫶 Friendship</option><option value="thankyou">🌷 Thank you</option></select></div>
-<div class="row"><div class="field"><label for="from">Your name</label><input id="from" maxlength="60" placeholder="Your name"></div><div class="field"><label for="to">Their name</label><input id="to" maxlength="60" placeholder="Someone special"></div></div>
-<div class="field"><label for="heading">Main heading</label><input id="heading" maxlength="100" placeholder="You make life brighter"></div>
-<div class="field"><label for="message">Your message</label><textarea id="message" maxlength="2500" placeholder="Write something from your heart..."></textarea></div>
-<div class="field"><label for="theme">Choose a theme</label><select id="theme"><option value="pink">Rose pink 🌸</option><option value="purple">Dreamy purple 💜</option><option value="sunset">Warm sunset 🌅</option><option value="mint">Fresh mint 🍃</option><option value="night">Midnight ✨</option></select></div>
-<div class="field"><label for="photo">Add a photo (optional)</label><input id="photo" type="file" accept="image/*"><div class="hint">Choose a small photo (up to 1 MB). Public photo storage needs an additional secure storage setup.</div></div>
-<div class="field"><label for="music">Add music (optional)</label><input id="music" type="file" accept="audio/*"><div class="hint">Browsers usually require the recipient to tap Play before music starts.</div></div>
-<div class="actions"><button class="primary" id="createBtn">Create shareable surprise 💌</button><button class="secondary" id="resetBtn" type="button">Reset</button></div>
-<div class="status" id="status" role="status"></div><p class="hint">To create public links, add your Firebase web config below in the code and configure secure Firestore rules. Until then, preview mode works.</p>
-</section>
-<section class="panel preview"><div class="preview-head"><h2>Live preview</h2><span class="live">● LIVE</span></div><div class="card-preview" id="previewCard"><div class="emoji" id="pEmoji">💖</div><div class="names" id="pNames">A little note for someone special</div><h2 id="pHeading">You make life brighter</h2><p id="pMessage">Some people make ordinary days feel magical. This little surprise is just to remind you that you matter. 💗</p><img class="photo-preview" id="pPhoto" alt="Selected photo"><audio id="pAudio" controls class="hide" style="width:100%;margin-top:12px"></audio></div><div id="shareResult"></div></section>
-</main>
-<section class="features"><div class="feature">💌<strong>Personalised</strong><small>Your words, names and colours.</small></div><div class="feature">🎨<strong>Your style</strong><small>Choose a theme that feels right.</small></div><div class="feature">🔗<strong>Shareable</strong><small>Unique public links after Firebase setup.</small></div></section>
-<footer class="footer">Made with care by momento. · Starter project — secure Firebase setup required before public sharing.</footer>
+
+<div class="container" id="creator">
+
+  <h1>💖 Momento</h1>
+
+  <p class="subtitle">
+    Make a little surprise for someone special ✨
+  </p>
+
+  <form id="surpriseForm">
+
+    <label for="recipient">Surprise kis ke liye hai?</label>
+
+    <input
+      id="recipient"
+      type="text"
+      placeholder="Enter their name"
+      maxlength="80"
+      required
+    >
+
+    <label for="message">Your Surprise Message</label>
+
+    <textarea
+      id="message"
+      placeholder="Write your special message here..."
+      maxlength="5000"
+      required
+    ></textarea>
+
+    <label for="photo">Choose Photo</label>
+
+    <input
+      id="photo"
+      type="file"
+      accept="image/*"
+    >
+
+    <img id="photoPreview" class="preview" alt="Photo preview">
+
+    <label for="music">Choose Music</label>
+
+    <input
+      id="music"
+      type="file"
+      accept="audio/*"
+    >
+
+    <p class="small">
+      Photo limit: 1 MB<br>
+      Music limit: 3 MB
+    </p>
+
+    <button id="createButton" type="submit">
+      💝 Create Surprise Link
+    </button>
+
+  </form>
+
+  <div id="status" role="status" aria-live="polite">
+    Apni details bharo aur surprise banao.
+  </div>
+
+  <div id="shareBox">
+    <strong>🎉 Your surprise link is ready!</strong>
+
+    <a id="shareLink" target="_blank" rel="noopener"></a>
+
+    <button id="copyButton" type="button">
+      📋 Copy Link
+    </button>
+  </div>
+
 </div>
+
+
+<div class="container" id="surpriseView">
+
+  <h1>💖 A Little Surprise For You 💖</h1>
+
+  <h2 id="surpriseName"></h2>
+
+  <img
+    id="surprisePhoto"
+    class="preview"
+    alt="Surprise photo"
+  >
+
+  <p id="surpriseMessage"></p>
+
+  <audio
+    id="surpriseMusic"
+    controls
+    style="display:none"
+  ></audio>
+
+  <p class="subtitle">Made with love 💕</p>
+
+</div>
+
+
 <script type="module">
-/* FIREBASE SETUP: Replace placeholders with the Web app config from Firebase Console.
-   Create Firestore and set secure rules before enabling public user-generated content. */
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+
+import {
+  getAuth,
+  signInAnonymously
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  doc,
+  setDoc,
+  getDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js";
+
+
+/* YOUR FIREBASE CONFIG */
+
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
+  apiKey: "AIzaSyCFIM9hfuLrX67x9NUm1girCH0OE1J4FFo",
   authDomain: "momento-surprise.firebaseapp.com",
   projectId: "momento-surprise",
   storageBucket: "momento-surprise.firebasestorage.app",
@@ -44,34 +277,288 @@ const firebaseConfig = {
   appId: "1:81623724692:web:b095309639b171aff43a81",
   measurementId: "G-VTGEK2GV32"
 };
-const $=id=>document.getElementById(id);
-const presets={
- love:{emoji:"💖",heading:"You make life brighter",message:"Some people make ordinary days feel magical. This little surprise is just to remind you that you matter. 💗"},
- birthday:{emoji:"🎂",heading:"Happy Birthday!",message:"Wishing you a day full of smiles, lovely memories and all the little things that make you happy. You deserve so much joy! 🎉"},
- sorry:{emoji:"🥺",heading:"Can we make things right?",message:"I’m sorry. You matter to me, and I hope we can talk, understand each other and make things better. 💗"},
- friendship:{emoji:"🫶",heading:"Lucky to have you",message:"Thank you for being part of my story. The laughs, memories and little moments with you mean a lot. Here’s to more! 💛"},
- thankyou:{emoji:"🌷",heading:"A little thank you",message:"Thank you for your kindness and for making a difference in ways you may not even realise. I appreciate you. 🌷"}
-};
-const themes={pink:"linear-gradient(145deg,#ffe0ec,#f6e7ff)",purple:"linear-gradient(145deg,#e7ddff,#fce5f1)",sunset:"linear-gradient(145deg,#ffe2c7,#ffd8df)",mint:"linear-gradient(145deg,#d9f8e8,#e3f2ff)",night:"linear-gradient(145deg,#25284d,#614c7e)"};
-function data(){return {type:$("type").value,from:$("from").value.trim(),to:$("to").value.trim(),heading:$("heading").value.trim(),message:$("message").value.trim(),theme:$("theme").value}}
-function update(){let d=data(),p=presets[d.type];$("pEmoji").textContent=p.emoji;$("pNames").textContent=d.from&&d.to?`${d.from} made this for ${d.to} 💌`:d.to?`A little note for ${d.to}`:d.from?`A little surprise from ${d.from}`:"A little note for someone special";$("pHeading").textContent=d.heading||p.heading;$("pMessage").textContent=d.message||p.message;$("previewCard").style.background=themes[d.theme];$("previewCard").style.color=d.theme==="night"?"white":"#30232b";$("pNames").style.color=d.theme==="night"?"#f7c5e0":"#7a5274"}
-function status(t){$("status").textContent=t;$("status").classList.add("show")}
-["type","from","to","heading","message","theme"].forEach(id=>$(id).addEventListener("input",()=>{if(id==="type"){$("heading").value=presets[$("type").value].heading;$("message").value=presets[$("type").value].message}update()}));
-$("photo").addEventListener("change",()=>{let f=$("photo").files[0],i=$("pPhoto");if(!f){i.style.display="none";return}if(f.size>1024*1024){status("Please choose a photo smaller than 1 MB.");$("photo").value="";return}i.src=URL.createObjectURL(f);i.style.display="block"});
-$("music").addEventListener("change",()=>{let f=$("music").files[0],a=$("pAudio");if(!f){a.classList.add("hide");return}if(f.size>3*1024*1024){status("Please choose an audio file smaller than 3 MB.");$("music").value="";return}a.src=URL.createObjectURL(f);a.classList.remove("hide")});
-function ready() {
-  return Boolean(
-    firebaseConfig.apiKey &&
-    firebaseConfig.apiKey !== "YOUR_FIREBASE_API_KEY" &&
-    firebaseConfig.projectId === "momento-surprise"
-  );
+
+
+const $ = id => document.getElementById(id);
+
+const form = $("surpriseForm");
+const button = $("createButton");
+const statusBox = $("status");
+
+let app;
+let auth;
+let db;
+let storage;
+let firebaseReady = false;
+
+
+function showStatus(message) {
+  statusBox.textContent = message;
 }
-async function firebase(){if(!ready())return null;const appmod=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");const dbmod=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");let app=appmod.initializeApp(firebaseConfig);return {db:dbmod.getFirestore(app),doc:dbmod.doc,getDoc:dbmod.getDoc,setDoc:dbmod.setDoc,serverTimestamp:dbmod.serverTimestamp}}
-function shared(d){document.body.classList.add("view-mode");$("hero").classList.add("hide");$("editor").classList.add("hide");document.querySelector(".features").classList.add("hide");$("pEmoji").textContent=(presets[d.type]||presets.love).emoji;$("pNames").textContent=d.from&&d.to?`${d.from} made this for ${d.to} 💌`:d.to?`A little note for ${d.to}`:"A little surprise for you";$("pHeading").textContent=d.heading||"A little surprise";$("pMessage").textContent=d.message||"";$("previewCard").style.background=themes[d.theme]||themes.pink;$("previewCard").style.color=d.theme==="night"?"white":"#30232b"}
-if(new URLSearchParams(location.search).has("id")){(async()=>{try{let f=await firebase();if(!f){status("Firebase config is not set up in this copy yet.");return}let snap=await f.getDoc(f.doc(f.db,"surprises",new URLSearchParams(location.search).get("id")));if(snap.exists())shared(snap.data());else status("This surprise link could not be found.")}catch(e){console.error(e);status("Could not load surprise. Check Firebase config and Firestore rules.")}})()}
-$("createBtn").addEventListener("click",async()=>{let d=data();d.heading=d.heading||presets[d.type].heading;d.message=d.message||presets[d.type].message;if(!ready()){status("Firebase abhi connect nahi hua. Code mein firebaseConfig ke placeholder values replace karni hongi. Preview abhi kaam karta hai.");return}try{let f=await firebase(),id=(crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2)+Date.now().toString(36)).replace(/-/g,"").slice(0,20);await f.setDoc(f.doc(f.db,"surprises",id),{...d,createdAt:f.serverTimestamp()});let url=location.origin+location.pathname+"?id="+encodeURIComponent(id);$("shareResult").innerHTML='<div class="sharebox"><strong>🎉 Your surprise link is ready!</strong><p><a id="shareLink" target="_blank" rel="noopener"></a></p><button class="secondary" id="copyLink">Copy link</button></div>';$("shareLink").href=url;$("shareLink").textContent=url;$("copyLink").onclick=async()=>{try{await navigator.clipboard.writeText(url);status("Link copied! Share it with your recipient.")}catch(e){status("Press and hold the link above to copy it.")}};status("Surprise saved! Share the generated link.")}catch(e){console.error(e);status("Surprise save nahi hua. Firestore database aur security rules check karo; public access ko bina security rules ke enable mat karo.")}});
-$("resetBtn").addEventListener("click",()=>{["from","to"].forEach(i=>$(i).valfunction ready() {
-  return Boolean(ue="");$("type").value="love";$("heading").value=presets.love.heading;$("message").value=presets.love.message;$("theme").value="pink";$("photo").value="";$("music").value="";$("pPhoto").style.display="none";$("pAudio").classList.add("hide");$("shareResult").innerHTML="";$("status").classList.remove("show");update()});
-$("heading").value=presets.love.heading;$("message").value=presets.love.message;update();
+
+
+/* INITIALIZE FIREBASE */
+
+try {
+  app = initializeApp(firebaseConfig);
+
+  auth = getAuth(app);
+  db = getFirestore(app);
+  storage = getStorage(app);
+
+  firebaseReady = true;
+
+} catch (error) {
+  showStatus("Firebase error: " + error.message);
+}
+
+
+/* PHOTO PREVIEW */
+
+$("photo").addEventListener("change", () => {
+
+  const file = $("photo").files[0];
+  const preview = $("photoPreview");
+
+  if (!file) {
+    preview.style.display = "none";
+    preview.removeAttribute("src");
+    return;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    showStatus("Please choose a valid image.");
+    $("photo").value = "";
+    return;
+  }
+
+  if (file.size > 1024 * 1024) {
+    showStatus("Photo 1 MB se chhoti honi chahiye.");
+    $("photo").value = "";
+    return;
+  }
+
+  preview.src = URL.createObjectURL(file);
+  preview.style.display = "block";
+
+  showStatus("Photo selected successfully! 💖");
+
+});
+
+
+/* CREATE SURPRISE */
+
+form.addEventListener("submit", async (event) => {
+
+  event.preventDefault();
+
+  if (!firebaseReady) {
+    showStatus("Firebase initialize nahi hua. Page refresh karke try karo.");
+    return;
+  }
+
+  const recipient = $("recipient").value.trim();
+  const message = $("message").value.trim();
+  const photoFile = $("photo").files[0];
+  const musicFile = $("music").files[0];
+
+  if (!recipient || !message) {
+    showStatus("Name aur message dono bharna zaroori hai.");
+    return;
+  }
+
+  if (photoFile && photoFile.size > 1024 * 1024) {
+    showStatus("Photo 1 MB se chhoti rakho.");
+    return;
+  }
+
+  if (musicFile && musicFile.size > 3 * 1024 * 1024) {
+    showStatus("Music file 3 MB se chhoti rakho.");
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = "Please wait...";
+
+  $("shareBox").style.display = "none";
+
+  try {
+
+    showStatus("Connecting to Firebase...");
+
+    const credential = await signInAnonymously(auth);
+    const user = credential.user;
+
+    const surpriseRef = doc(collection(db, "surprises"));
+    const surpriseId = surpriseRef.id;
+
+    let photoURL = "";
+    let musicURL = "";
+
+    /* UPLOAD PHOTO */
+
+    if (photoFile) {
+
+      showStatus("Uploading photo...");
+
+      const photoRef = ref(
+        storage,
+        `surprises/${user.uid}/${surpriseId}/photo`
+      );
+
+      await uploadBytes(photoRef, photoFile, {
+        contentType: photoFile.type
+      });
+
+      photoURL = await getDownloadURL(photoRef);
+
+    }
+
+    /* UPLOAD MUSIC */
+
+    if (musicFile) {
+
+      showStatus("Uploading music...");
+
+      const musicRef = ref(
+        storage,
+        `surprises/${user.uid}/${surpriseId}/music`
+      );
+
+      await uploadBytes(musicRef, musicFile, {
+        contentType: musicFile.type
+      });
+
+      musicURL = await getDownloadURL(musicRef);
+
+    }
+
+    /* SAVE SURPRISE */
+
+    showStatus("Saving surprise...");
+
+    await setDoc(surpriseRef, {
+      recipient: recipient,
+      message: message,
+      photoURL: photoURL,
+      musicURL: musicURL,
+      createdBy: user.uid,
+      createdAt: serverTimestamp()
+    });
+
+    /* GENERATE SHARE LINK */
+
+    const shareURL =
+      location.origin +
+      location.pathname +
+      "?id=" +
+      encodeURIComponent(surpriseId);
+
+    $("shareLink").href = shareURL;
+    $("shareLink").textContent = shareURL;
+
+    $("shareBox").style.display = "block";
+
+    showStatus("🎉 Surprise successfully saved!");
+
+  } catch (error) {
+
+    console.error(error);
+
+    showStatus(
+      "Surprise save nahi hua.\n\n" +
+      "Error code: " + (error.code || "unknown") +
+      "\nMessage: " + error.message
+    );
+
+  } finally {
+
+    button.disabled = false;
+    button.textContent = "💝 Create Surprise Link";
+
+  }
+
+});
+
+
+/* COPY LINK */
+
+$("copyButton").addEventListener("click", async () => {
+
+  const link = $("shareLink").href;
+
+  try {
+
+    await navigator.clipboard.writeText(link);
+
+    showStatus("Link copied successfully! 💖");
+
+  } catch (error) {
+
+    showStatus("Link ko select karke copy karo:\n" + link);
+
+  }
+
+});
+
+
+/* OPEN SURPRISE LINK */
+
+async function openSurprise() {
+
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id");
+
+  if (!id) return;
+
+  $("creator").style.display = "none";
+  $("surpriseView").style.display = "block";
+
+  try {
+
+    const snapshot = await getDoc(doc(db, "surprises", id));
+
+    if (!snapshot.exists()) {
+
+      $("surpriseMessage").textContent =
+        "Surprise nahi mila. Link check karo.";
+
+      return;
+    }
+
+    const data = snapshot.data();
+
+    $("surpriseName").textContent = "For " + data.recipient;
+    $("surpriseMessage").textContent = data.message;
+
+    if (data.photoURL) {
+
+      $("surprisePhoto").src = data.photoURL;
+      $("surprisePhoto").style.display = "block";
+
+    }
+
+    if (data.musicURL) {
+
+      $("surpriseMusic").src = data.musicURL;
+      $("surpriseMusic").style.display = "block";
+
+    }
+
+  } catch (error) {
+
+    console.error(error);
+
+    $("surpriseMessage").textContent =
+      "Surprise load nahi hua: " + error.message;
+
+  }
+
+}
+
+openSurprise();
+
 </script>
-</body></html>
+
+</body>
+</html>
